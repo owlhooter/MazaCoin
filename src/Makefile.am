@@ -254,7 +254,7 @@ endif
 if ENABLE_WALLET
 bitcoind_LDADD += libbitcoin_wallet.a
 endif
-bitcoind_SOURCES = mazacoind.cpp
+bitcoind_SOURCES = bitcoind.cpp
 #
 
 if TARGET_WINDOWS
@@ -287,7 +287,7 @@ bitcoin_tx_LDADD = \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(BOOST_LIBS)
-bitcoin_tx_SOURCES = mazacoin-tx.cpp
+bitcoin_tx_SOURCES = bitcoin-tx.cpp
 bitcoin_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
 
