@@ -53,14 +53,14 @@ bin_PROGRAMS =
 TESTS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += bitcoind
+  bin_PROGRAMS += mazacoind
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += bitcoin-cli
+  bin_PROGRAMS += mazacoin-cli
 endif
 
-bin_PROGRAMS += bitcoin-tx
+bin_PROGRAMS += mazacoin-tx
 
 .PHONY: FORCE
 # bitcoin core #
@@ -254,11 +254,11 @@ endif
 if ENABLE_WALLET
 bitcoind_LDADD += libbitcoin_wallet.a
 endif
-bitcoind_SOURCES = bitcoind.cpp
+bitcoind_SOURCES = mazacoind.cpp
 #
 
 if TARGET_WINDOWS
-bitcoind_SOURCES += bitcoind-res.rc
+bitcoind_SOURCES += mazacoind-res.rc
 endif
 
 bitcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS)
@@ -287,12 +287,12 @@ bitcoin_tx_LDADD = \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(BOOST_LIBS)
-bitcoin_tx_SOURCES = bitcoin-tx.cpp
+bitcoin_tx_SOURCES = mazacoin-tx.cpp
 bitcoin_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
 
 if TARGET_WINDOWS
-bitcoin_cli_SOURCES += bitcoin-cli-res.rc
+bitcoin_cli_SOURCES += mazacoin-cli-res.rc
 endif
 
 CLEANFILES = leveldb/libleveldb.a leveldb/libmemenv.a *.gcda *.gcno
